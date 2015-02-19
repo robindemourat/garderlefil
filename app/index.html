@@ -1,184 +1,213 @@
 <!doctype html>
 <html class="no-js">
-  <head>
-    <meta charset="utf-8">
-    <title  ng-bind="'Garder le fil | un carnet de proposition à l'ère numérique | ' + $root.title">Garder le fil - un carnet de propositions sur la lecture à l'ère numérique</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+<head>
+  <meta charset="utf-8">
+  <title>Garder le fil - un carnet de propositions sur la lecture à l'ère numérique</title>
+  
+  <!-- META DUBLIN CORE -->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="DC.Title" lang="fr" content="Garder le fil" />
+  <meta name="DC.Date.created" scheme="W3CDTF" content="2011-06-20" />
 
-    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Arvo:400,400italic' rel='stylesheet' type='text/css'>
+  <!-- META TWITTER -->
+  <meta name="twitter:card" value="summary">
+  <meta name="twitter:site" content="@robindemourat">
+  <meta name="twitter:title" content="Garder le fil">
+  <meta name="twitter:description" content="Garder le fil est un carnet de proposition sur la lecture d'étude à l'ère numérique">
+  <meta name="twitter:creator" content="@robindemourat">
+  <meta name="twitter:image" content="images/logo-reseaux.png">
 
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/transitions.css">
-    <!-- endbuild -->
-  </head>
-  <body ng-app="garderlefilApp" ng-controller="LayoutCtrl">
+  <!-- META GOOGLE + -->
+  <meta itemprop="name" content="Garder le fil">
+  <meta itemprop="description" content="Garder le fil est un carnet de proposition sur la lecture d'étude à l'ère numérique.">
+  <meta itemprop="image" content="images/logo-reseaux.png">
+
+  <!-- META OPEN GRAPH / FACEBOOK -->
+  <meta property="og:title" content="Garder le fil"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="http://works.robindemourat.com/garderlefil/"/>
+  <meta property="og:description" content="Garder le fil est un carnet de proposition sur la lecture d'étude à l'ère numérique"/>
+  <meta property="og:site_name" content="Garder le fil"/>
+  <!--todo : creer image facebook-->
+  <meta property="og:image" content="images/logo-reseaux.png"/>
+
+  <meta charset="UTF-8">
+  <meta name="author" content="Robin de Mourat"/>
+  <meta name="keywords" content="design, lecture, reading, annotation, scholarly practices, pratiques savantes"/>
+  <meta name="description" content="Garder le fil est un carnet de proposition sur la lecture d'étude à l'ère numérique." />
+
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/transitions.css">
+  <!-- endbuild -->
+</head>
+<body ng-app="garderlefilApp" ng-controller="LayoutCtrl" ng-keyup="keyup($event)">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+      <![endif]-->
 
-    <header>
-      <h1><a href="#/" >Garder le fil | <span class="partie" ng-bind="$root.title"></span></a></h1>
-      <h3>Un carnet de proposition sur la lecture numérique</h3>
-    </header>
+      <header>
+        <h1><a href="#/" >Garder le fil | <span class="partie" ng-bind="$root.title"></span></a></h1>
+        <!-- <h3>Un carnet de proposition sur la lecture numérique</h3>-->
+      </header>
 
 
-    <div class="middle-container">
+      <div class="middle-container">
 
-      <div class="content-container">
-        <div class="view-container" ng-class="setViewClass()">
-          <div class="page-wrapper" ng-class="animationClass" ng-view="" fitwidth></div>
+        <div class="content-container">
+          <div class="view-container animate" ng-class="setViewClass()">
+            <div class="page-wrapper" ng-class="animationClass" ng-view="" fitwidth></div>
+          </div>
         </div>
-      </div>
 
-      <div class="menu-cache" 
-          ng-click="menuOut = !menuOut"  ng-class="{'col-sm-2 col-xs-5' : menuOut === true, 'col-sm-1 col-xs-1 menu-cache-active' : menuOut === false}"
+        <div class="menu-cache" 
+        ng-click="menuOut = !menuOut"  ng-class="{'col-sm-2 col-xs-5' : menuOut === true, 'col-sm-1 col-xs-1 menu-cache-active' : menuOut === false}"
         >
-         </div>
-      <nav class="menu" ng-class="{'col-sm-2 col-xs-5' : menuOut === true, 'col-sm-1 col-xs-1' : menuOut === false}"role="navigation" navmenu>
+      </div>
+      <nav class="menu animate" ng-class="{'col-sm-2 col-xs-5' : menuOut === true, 'col-sm-1 col-xs-1' : menuOut === false}"role="navigation" navmenu>
         <ul>
           <li>
             <div class="menu-item">
-            <a href="#/recherche/genese">
-              <img src="images/icones-01.png" alt="">
-              <h3 class="principal-menu-item" ng-show="menuOut == true">La recherche</h3>
-            </a>
+              <a href="#/recherche/genese">
+                <img src="images/icones-01.png" alt="">
+                <h3 class="principal-menu-item" ng-show="menuOut == true">La recherche</h3>
+              </a>
             </div>
             <ul class="submenu">
               <li>
                 <div class="menu-item">
-                <a href="#/recherche/genese">
-                  <h4 class="principal-menu-item" ng-show="menuOut == true">Genèse</h4>
-                </a>
+                  <a href="#/recherche/genese">
+                    <h4 class="principal-menu-item" ng-show="menuOut == true">Genèse</h4>
+                  </a>
                 </div>
               </li>
               <li>
                 <div class="menu-item">
-                <a href="#/recherche/une_anthropologie_de_la_lecture">
-                  <h4 class="principal-menu-item" ng-show="menuOut == true">Une anthropologie de la lecture</h4>
-                </a>
+                  <a href="#/recherche/une_anthropologie_de_la_lecture">
+                    <h4 class="principal-menu-item" ng-show="menuOut == true">Une anthropologie de la lecture</h4>
+                  </a>
                 </div>
               </li>
               <li>
                 <div class="menu-item">
-                <a href="#/recherche/lecture_d_etude">
-                  <h4 class="principal-menu-item" ng-show="menuOut == true">La lecture d'étude</h4>
-                </a>
+                  <a href="#/recherche/lecture_d_etude">
+                    <h4 class="principal-menu-item" ng-show="menuOut == true">La lecture d'étude</h4>
+                  </a>
                 </div>
               </li>
               <li>
                 <div class="menu-item">
-                <a href="#/recherche/positionnement">
-                  <h4 class="principal-menu-item" ng-show="menuOut == true">Positionnement</h4>
-                </a>
+                  <a href="#/recherche/positionnement">
+                    <h4 class="principal-menu-item" ng-show="menuOut == true">Positionnement</h4>
+                  </a>
                 </div>
               </li>
             </ul>
           </li>
           <li>
             <div class="menu-item">
-            <a href="#/developement">
-              <img src="images/icones-02.png" alt="">
-              <h3 class="principal-menu-item" ng-show="menuOut == true">Le développement</h3>
-            </a>
+              <a href="#/developement">
+                <img src="images/icones-02.png" alt="">
+                <h3 class="principal-menu-item" ng-show="menuOut == true">Le développement</h3>
+              </a>
             </div>
           </li>
           <li>
             <div class="menu-item">
-            <a href="#/projet/vue_d_ensemble">
-              <img src="images/icones-03.png" alt="">
-              <h3 class="principal-menu-item" ng-show="menuOut == true">Le projet</h3>
-            </a>
+              <a href="#/projet/vue_d_ensemble">
+                <img src="images/icones-03.png" alt="">
+                <h3 class="principal-menu-item" ng-show="menuOut == true">Le projet</h3>
+              </a>
             </div>
 
             <ul class="submenu">
               <li>
                 <div class="menu-item">
-                <a href="#/projet/vue_d_ensemble">
-                  <h4 class="principal-menu-item" ng-show="menuOut == true">Vue d'ensemble</h4>
-                </a>
+                  <a href="#/projet/vue_d_ensemble">
+                    <h4 class="principal-menu-item" ng-show="menuOut == true">Vue d'ensemble</h4>
+                  </a>
                 </div>
               </li>
               <li>
                 <div class="menu-item">
-                <a href="#/projet/chapitre1">
-                  <h4 class="principal-menu-item" ng-show="menuOut == true">Chapitre 1</h4>
-                </a>
+                  <a href="#/projet/chapitre1">
+                    <h4 class="principal-menu-item" ng-show="menuOut == true">Chapitre 1</h4>
+                  </a>
                 </div>
               </li>
               <li>
                 <div class="menu-item">
-                <a href="#/projet/chapitre2">
-                  <h4 class="principal-menu-item" ng-show="menuOut == true">Chapitre 2</h4>
-                </a>
+                  <a href="#/projet/chapitre2">
+                    <h4 class="principal-menu-item" ng-show="menuOut == true">Chapitre 2</h4>
+                  </a>
                 </div>
               </li>
               <li>
                 <div class="menu-item">
-                <a href="#/projet/chapitre3">
-                  <h4 class="principal-menu-item" ng-show="menuOut == true">Chapitre 3</h4>
-                </a>
+                  <a href="#/projet/chapitre3">
+                    <h4 class="principal-menu-item" ng-show="menuOut == true">Chapitre 3</h4>
+                  </a>
                 </div>
               </li>
               <li>
                 <div class="menu-item">
-                <a href="#/projet/chapitre4">
-                  <h4 class="principal-menu-item" ng-show="menuOut == true">Chapitre 4</h4>
-                </a>
+                  <a href="#/projet/chapitre4">
+                    <h4 class="principal-menu-item" ng-show="menuOut == true">Chapitre 4</h4>
+                  </a>
                 </div>
               </li>
               <li>
                 <div class="menu-item">
-                <a href="#/projet/chapitre5">
-                  <h4 class="principal-menu-item" ng-show="menuOut == true">Chapitre 5</h4>
-                </a>
+                  <a href="#/projet/chapitre5">
+                    <h4 class="principal-menu-item" ng-show="menuOut == true">Chapitre 5</h4>
+                  </a>
                 </div>
               </li>
               <li>
                 <div class="menu-item">
-                <a href="#/projet/chapitre6">
-                  <h4 class="principal-menu-item" ng-show="menuOut == true">Chapitre 6</h4>
-                </a>
+                  <a href="#/projet/chapitre6">
+                    <h4 class="principal-menu-item" ng-show="menuOut == true">Chapitre 6</h4>
+                  </a>
                 </div>
               </li>
             </ul>
 
           </li>
         </ul>
-         <ul class="menu-group-bottom">
+        <ul class="menu-group-bottom">
           <li>
             <div class="menu-item">
-            <a href="#/a_propos">
-              <img src="images/icones-04.png" alt="">
-              <h3 class="principal-menu-item" ng-show="menuOut == true">À propos</h3>
-            </a>
+              <a href="#/a_propos">
+                <img src="images/icones-04.png" alt="">
+                <h3 class="principal-menu-item" ng-show="menuOut == true">À propos</h3>
+              </a>
             </div>
           </li>
           <li>
             <div class="menu-item">
-            <a href="#/les_memoires">
-              <img src="images/icones-05.png" alt="">
-              <h3 class="principal-menu-item" ng-show="menuOut == true">Les mémoires</h3>
-            </a>
+              <a href="#/les_memoires">
+                <img src="images/icones-05.png" alt="">
+                <h3 class="principal-menu-item" ng-show="menuOut == true">Les mémoires</h3>
+              </a>
             </div>
           </li>
           <li>
             <div class="menu-item">
-            <a href="#/resume">
-              <img src="images/icones-06.png" alt="">
-              <h3 class="principal-menu-item" ng-show="menuOut == true">Résumé</h3>
-            </a>
+              <a href="#/resume">
+                <img src="images/icones-06.png" alt="">
+                <h3 class="principal-menu-item" ng-show="menuOut == true">Résumé</h3>
+              </a>
             </div>
           </li>
-         </ul>
+        </ul>
       </nav>
     </div>
     <footer>
@@ -186,9 +215,9 @@
     </footer>
     
     <div class="down" ng-show="downUrl != undefined">
-        <a ng-href="{{downUrl}}">
-          <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
-        </a>
+      <a ng-href="{{downUrl}}">
+        <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+      </a>
       
     </div>
     <div class="up" ng-show="upUrl != undefined">
@@ -197,18 +226,30 @@
       </a>
     </div>
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+<!--<div class="intro-container" ng-show="intro === true" ng-click="intro = false">
+  <div class="intro-wrapper">
+  <object width="200%" height="100%" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0">
+    <param name="allowfullscreen" value="true" />
+    <param name="allowscriptaccess" value="always" />
+    <param name="src" value="http://vimeo.com/moogaloop.swf?clip_id=26279849&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=0&amp;show_portrait=0&amp;color=00adef&amp;fullscreen=1&amp;autoplay=0&amp;loop=0" />
+    <embed width="200%" height="100%" type="application/x-shockwave-flash" src="http://vimeo.com/moogaloop.swf?clip_id=26279849&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=0&amp;show_portrait=0&amp;color=00adef&amp;fullscreen=1&amp;autoplay=0&amp;loop=0" allowfullscreen="true" allowscriptaccess="always" />
+</div>
+    <a href="#/" ng-click="intro = false">Passer l'introduction</a>
+  </div>
+</div>-->
 
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    <!-- build:js(.) scripts/oldieshim.js -->
+ga('create', 'UA-XXXXX-X');
+ga('send', 'pageview');
+</script>
+
+<!-- build:js(.) scripts/oldieshim.js -->
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower_components/json3/lib/json3.min.js"></script>
@@ -231,27 +272,27 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/chapitre1.js"></script>
-        <script src="scripts/controllers/chapitre2.js"></script>
-        <script src="scripts/controllers/chapitre3.js"></script>
-        <script src="scripts/controllers/chapitre4.js"></script>
-        <script src="scripts/controllers/chapitre5.js"></script>
-        <script src="scripts/controllers/chapitre6.js"></script>
-        <script src="scripts/controllers/developement.js"></script>
-        <script src="scripts/controllers/genese.js"></script>
-        <script src="scripts/controllers/lecture_d_etude.js"></script>
-        <script src="scripts/controllers/memoires.js"></script>
-        <script src="scripts/controllers/positionnement.js"></script>
-        <script src="scripts/controllers/resume.js"></script>
-        <script src="scripts/controllers/une_anthropologie_de_la_lecture.js"></script>
-        <script src="scripts/controllers/vue_d_ensemble.js"></script>
-        <script src="scripts/controllers/layout.js"></script>
-         <script src="scripts/controllers/a_propos.js"></script>
-        <script src="scripts/directives/navmen.js"></script>
-        <script src="scripts/directives/fitwidth.js"></script>
-        <!-- endbuild -->
-</body>
-</html>
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/chapitre1.js"></script>
+    <script src="scripts/controllers/chapitre2.js"></script>
+    <script src="scripts/controllers/chapitre3.js"></script>
+    <script src="scripts/controllers/chapitre4.js"></script>
+    <script src="scripts/controllers/chapitre5.js"></script>
+    <script src="scripts/controllers/chapitre6.js"></script>
+    <script src="scripts/controllers/developement.js"></script>
+    <script src="scripts/controllers/genese.js"></script>
+    <script src="scripts/controllers/lecture_d_etude.js"></script>
+    <script src="scripts/controllers/memoires.js"></script>
+    <script src="scripts/controllers/positionnement.js"></script>
+    <script src="scripts/controllers/resume.js"></script>
+    <script src="scripts/controllers/une_anthropologie_de_la_lecture.js"></script>
+    <script src="scripts/controllers/vue_d_ensemble.js"></script>
+    <script src="scripts/controllers/layout.js"></script>
+    <script src="scripts/controllers/a_propos.js"></script>
+    <script src="scripts/directives/navmen.js"></script>
+    <script src="scripts/directives/fitwidth.js"></script>
+    <!-- endbuild -->
+  </body>
+  </html>

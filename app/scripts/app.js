@@ -29,32 +29,32 @@ angular
       .when('/projet/chapitre1', {
         templateUrl: 'views/chapitre1.html',
         controller: 'Chapitre1Ctrl',
-        title:'Chapitre 1'
+        title:'Chapitre 1 : une navigation généalogique'
       })
       .when('/projet/chapitre2', {
         templateUrl: 'views/chapitre2.html',
         controller: 'Chapitre2Ctrl',
-        title:'Chapitre 2'
+        title:'Chapitre 2 : gestes de lecture'
       })
       .when('/projet/chapitre3', {
         templateUrl: 'views/chapitre3.html',
         controller: 'Chapitre3Ctrl',
-        title:'Chapitre 3'
+        title:'Chapitre 3 : les fruits de la lecture'
       })
       .when('/projet/chapitre4', {
         templateUrl: 'views/chapitre4.html',
         controller: 'Chapitre4Ctrl',
-        title:'Chapitre 4'
+        title:'Chapitre 4 : cartographier ses lectures'
       })
       .when('/projet/chapitre5', {
         templateUrl: 'views/chapitre5.html',
         controller: 'Chapitre5Ctrl',
-        title:'Chapitre 5'
+        title:'Chapitre 5 : tisser un texte'
       })
       .when('/projet/chapitre6', {
         templateUrl: 'views/chapitre6.html',
         controller: 'Chapitre6Ctrl',
-        title:'Chapitre 6'
+        title:'Chapitre 6 : garder le fil'
       })
       .when('/projet', {
         redirectTo : '/projet/chapitre1'

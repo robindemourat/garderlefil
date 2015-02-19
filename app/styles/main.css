@@ -10,6 +10,14 @@ a:hover{
   text-decoration : none;
 }
 
+.animate{
+      -webkit-transition: all 0.3s ease;                  
+    -moz-transition: all 0.3s ease;                 
+    -o-transition: all 0.3s ease;   
+    -ms-transition: all 0.3s ease;          
+    transition: all 0.3s ease;
+}
+
 img{
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -36,6 +44,7 @@ header{
   height : 11%;
   overflow:hidden;
   z-index:5;
+  min-height : 60px;
 }
 footer{
   position : absolute;
@@ -44,12 +53,17 @@ footer{
   width : 100%;
   height : 3%;
   overflow:hidden;
+  padding-left : 2em;
+  padding-bottom : 2em;
+  opacity : 0.5;
+  font-size : 0.7em;
+  font-style : italic;
 }
 .middle-container{
   position : absolute;
   left : 0;
   width : 100%;
-  height : 88%;
+  height : 92%;
   top : 6%;
   overflow:hidden;
 }
@@ -59,7 +73,7 @@ footer{
   left : 0;
   top : 6%;
   width : 100%;
-  height : 88%;
+  height : 92%;
   overflow:hidden;
 }
 
@@ -72,24 +86,24 @@ footer{
 
 .up,.down{
   position : absolute;
-  right : 0;
+  right : 2em;
   color: red;
   z-index:1001;
 }
 
 .up{
-  top : 0;
+  top : 2em;
 }
 
 .down{
-  bottom : 0;
+  bottom : 2em;
 }
 
 /* menu*/
 .menu{
   position : absolute;
   left : 0;
-  height : 88%;
+  height : 92%;
   top : 6%;
   overflow:hidden;
   z-index:2;
@@ -121,6 +135,7 @@ footer{
 
 .menu li{
   list-style-type : none;
+  margin-bottom : 5px;
 }
 
 .menu-item{
@@ -142,7 +157,7 @@ footer{
   width : 2em;
   display : inline;
   vertical-align: middle;
-  margin-top: -5%;
+  margin-top: -8%;
 }
 
 .menu-item h3{
@@ -163,6 +178,7 @@ footer{
 
 .submenu{
   margin-left:2.2em!important;
+  margin-top : 5px;
 }
 
 .closed{
@@ -186,10 +202,13 @@ nav .partie{
 
 header h1{
   position : absolute;
-  left : 0;
+  left : 1.7em;
   top : 0;
   font-size : 1.4em;
   color : #BE1621;
+  margin : 0;
+  padding : 0;
+  padding-top : 0.7em;
 }
 
 header h3{
@@ -199,6 +218,8 @@ header h3{
   font-size : 0.8em;
   font-style : italic;
   color : #928C89;
+  margin : 0;
+  padding : 0;
 }
 
 
@@ -218,7 +239,7 @@ header h3{
   -moz-column-gap: 2em;
   column-gap: 2em;
   height : 100%;
-/*  width : 620px;*/
+  width : 620px;
   margin-right : 20px;
   font-size : 0.9em;
 }
@@ -254,6 +275,9 @@ header h3{
   text-align : center;
   padding: 0;
   margin: 0;
+  display:inline-block;
+  float : left;
+  margin-left : 10px;
 }
 
 .section-title h2{
@@ -270,19 +294,43 @@ header h3{
  * 
  */
 
-::-webkit-scrollbar {
-    width: 12px;
+ ::-webkit-scrollbar {
+  width: 12px;
 }
 
 ::-webkit-scrollbar-button {
-    background-color : #BE1621;
+  background-color : #BE1621;
 }
- 
+
 ::-webkit-scrollbar-track {
-    /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
-    border-right : 2px solid rgba(0,0,0,0.3);
+  /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
+  border-right : 2px solid rgba(0,0,0,0.3);
 }
- 
+
 ::-webkit-scrollbar-thumb {
   background-color : #BE1621;
 }
+
+/*
+INTRO
+*/
+.intro-container{
+  background : rgba(0,0,0,0.7);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left:0;
+  z-index:1003;
+  cursor : pointer;
+}
+
+.intro-wrapper{
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top:25%;
+  left:25%;
+}
+
+
