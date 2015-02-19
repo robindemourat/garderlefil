@@ -8,7 +8,7 @@
  * Controller of the garderlefilApp
  */
 angular.module('garderlefilApp')
-  .controller('LayoutCtrl', function ($scope, $location, $route) {
+  .controller('LayoutCtrl', function ($scope, $location, $route, $rootScope) {
 
   	$scope.menuOut = true;
   	$scope.pagesList = [];
@@ -48,6 +48,7 @@ angular.module('garderlefilApp')
 
  	//navigation
  	$scope.$on('$routeChangeSuccess', function(event, current, previous){
+     $rootScope.title = $route.current.title;
 			var index = $scope.getPageIndex();
 			if(index < $scope.pagesList.length - 2)
  			 $scope.downUrl = $scope.pagesList[+index+1];
@@ -57,7 +58,7 @@ angular.module('garderlefilApp')
  			 $scope.upUrl = $scope.pagesList[+index-1];
  			else $scope.upUrl = undefined;
 
-      console.log($scope.animationClass);
+      $('.view-container')[0].scrollLeft = 0;
  	});
 
  	$scope.getPageIndex = function(){
@@ -69,5 +70,7 @@ angular.module('garderlefilApp')
  		}
  		return index;
  	};
+
+  $rootScope.keyUp
 
   });

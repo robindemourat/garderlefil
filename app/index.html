@@ -26,7 +26,7 @@
     <![endif]-->
 
     <header>
-      <h1><a href="#/">Garder le fil</a></h1>
+      <h1><a href="#/" >Garder le fil | <span class="partie" ng-bind="$root.title"></span></a></h1>
       <h3>Un carnet de proposition sur la lecture numérique</h3>
     </header>
 
@@ -66,6 +66,15 @@
                   <h4 class="principal-menu-item" ng-show="menuOut == true">Une anthropologie de la lecture</h4>
                 </a>
                 </div>
+              </li>
+              <li>
+                <div class="menu-item">
+                <a href="#/recherche/lecture_d_etude">
+                  <h4 class="principal-menu-item" ng-show="menuOut == true">La lecture d'étude</h4>
+                </a>
+                </div>
+              </li>
+              <li>
                 <div class="menu-item">
                 <a href="#/recherche/positionnement">
                   <h4 class="principal-menu-item" ng-show="menuOut == true">Positionnement</h4>
@@ -163,7 +172,7 @@
           </li>
           <li>
             <div class="menu-item">
-            <a href="#/recherche/resume">
+            <a href="#/resume">
               <img src="images/icones-06.png" alt="">
               <h3 class="principal-menu-item" ng-show="menuOut == true">Résumé</h3>
             </a>

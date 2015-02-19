@@ -29,32 +29,32 @@ angular
       .when('/projet/chapitre1', {
         templateUrl: 'views/chapitre1.html',
         controller: 'Chapitre1Ctrl',
-        title:'Le projet : chapitre 1'
+        title:'Chapitre 1'
       })
       .when('/projet/chapitre2', {
         templateUrl: 'views/chapitre2.html',
         controller: 'Chapitre2Ctrl',
-        title:'Le projet : chapitre 2'
+        title:'Chapitre 2'
       })
       .when('/projet/chapitre3', {
         templateUrl: 'views/chapitre3.html',
         controller: 'Chapitre3Ctrl',
-        title:'Le projet : chapitre 3'
+        title:'Chapitre 3'
       })
       .when('/projet/chapitre4', {
         templateUrl: 'views/chapitre4.html',
         controller: 'Chapitre4Ctrl',
-        title:'Le projet : chapitre 4'
+        title:'Chapitre 4'
       })
       .when('/projet/chapitre5', {
         templateUrl: 'views/chapitre5.html',
         controller: 'Chapitre5Ctrl',
-        title:'Le projet : chapitre 5'
+        title:'Chapitre 5'
       })
       .when('/projet/chapitre6', {
         templateUrl: 'views/chapitre6.html',
         controller: 'Chapitre6Ctrl',
-        title:'Le projet : chapitre 6'
+        title:'Chapitre 6'
       })
       .when('/projet', {
         redirectTo : '/projet/chapitre1'
@@ -67,17 +67,17 @@ angular
       .when('/recherche/genese', {
         templateUrl: 'views/genese.html',
         controller: 'GeneseCtrl',
-        title:'La recherche : genèse'
+        title:'Genèse'
       })
       .when('/recherche/positionnement', {
         templateUrl: 'views/positionnement.html',
         controller: 'PositionnementCtrl',
-        title:'La recherche : positionnement'
+        title:'Positionnement'
       })
       .when('/recherche/lecture_d_etude', {
         templateUrl: 'views/lecture_d_etude.html',
         controller: 'LectureDEtudeCtrl',
-        title:'La recherche : la lecture d\'étude'
+        title:'La lecture d\'étude'
       })
       .when('/recherche', {
         redirectTo : '/recherche/genese'
