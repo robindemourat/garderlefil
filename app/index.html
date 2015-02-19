@@ -31,8 +31,11 @@
       <div class="content-container">
         <div class="view-container" ng-class="setViewClass()" ng-view=""></div>
       </div>
-
-      <nav class="menu" ng-class="{'col-sm-2 col-xs-4' : menuOut === true, 'col-sm-1 col-xs-1' : menuOut === false}" ng-click="menuOut = !menuOut" role="navigation" navmenu>
+      <div class="menu-cache" 
+          ng-click="menuOut = !menuOut"  ng-class="{'col-sm-2 col-xs-4' : menuOut === true, 'col-sm-1 col-xs-1 menu-cache-active' : menuOut === false}"
+        >
+         </div>
+      <nav class="menu" ng-class="{'col-sm-2 col-xs-4' : menuOut === true, 'col-sm-1 col-xs-1' : menuOut === false}"role="navigation" navmenu>
         <ul>
           <li>
             <div class="menu-item">

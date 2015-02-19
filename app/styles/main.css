@@ -85,8 +85,16 @@ footer{
   height : 80%;
   overflow:hidden;
   z-index:2;
-  cursor : pointer;
   padding : 0;
+}
+
+.menu-cache{
+  height : 100%;
+  position : absolute;
+  cursor : pointer;
+}
+.menu-cache-active{
+  z-index : 1000;
 }
 
 .menu-group-bottom{
