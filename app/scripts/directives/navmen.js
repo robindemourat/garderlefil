@@ -51,7 +51,7 @@ angular.module('garderlefilApp')
 		    	scope.$emit('downPage');
 		    }else if(curI < prevI){
 		    	scope.$emit('upPage');
-		    }
+		    }else scope.$emit('noPage');
 		    
 		    //open or close concerned submenu items
 		    angular.forEach(subMenus, function(value, key){

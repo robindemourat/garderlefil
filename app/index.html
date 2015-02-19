@@ -5,6 +5,10 @@
     <title  ng-bind="'Garder le fil | un carnet de proposition à l'ère numérique | ' + $root.title">Garder le fil - un carnet de propositions sur la lecture à l'ère numérique</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Arvo:400,400italic' rel='stylesheet' type='text/css'>
+
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -28,14 +32,18 @@
 
 
     <div class="middle-container">
+
       <div class="content-container">
-        <div class="view-container" ng-class="setViewClass()" ng-view=""></div>
+        <div class="view-container" ng-class="setViewClass()">
+          <div class="page-wrapper" ng-class="animationClass" ng-view="" fitwidth></div>
+        </div>
       </div>
+
       <div class="menu-cache" 
-          ng-click="menuOut = !menuOut"  ng-class="{'col-sm-2 col-xs-4' : menuOut === true, 'col-sm-1 col-xs-1 menu-cache-active' : menuOut === false}"
+          ng-click="menuOut = !menuOut"  ng-class="{'col-sm-2 col-xs-5' : menuOut === true, 'col-sm-1 col-xs-1 menu-cache-active' : menuOut === false}"
         >
          </div>
-      <nav class="menu" ng-class="{'col-sm-2 col-xs-4' : menuOut === true, 'col-sm-1 col-xs-1' : menuOut === false}"role="navigation" navmenu>
+      <nav class="menu" ng-class="{'col-sm-2 col-xs-5' : menuOut === true, 'col-sm-1 col-xs-1' : menuOut === false}"role="navigation" navmenu>
         <ul>
           <li>
             <div class="menu-item">
@@ -168,8 +176,17 @@
       <span>Robin de Mourat.</span><span>2011, tous droits réservés.</span>
     </footer>
     
-    <div class="down" ng-show="downUrl != undefined"><a ng-href="{{downUrl}}">Down</a></div>
-    <div class="up" ng-show="upUrl != undefined"><a ng-href="{{upUrl}}">Up</a></div>
+    <div class="down" ng-show="downUrl != undefined">
+        <a ng-href="{{downUrl}}">
+          <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+        </a>
+      
+    </div>
+    <div class="up" ng-show="upUrl != undefined">
+      <a ng-href="{{upUrl}}">
+        <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+      </a>
+    </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -223,7 +240,9 @@
         <script src="scripts/controllers/une_anthropologie_de_la_lecture.js"></script>
         <script src="scripts/controllers/vue_d_ensemble.js"></script>
         <script src="scripts/controllers/layout.js"></script>
+         <script src="scripts/controllers/a_propos.js"></script>
         <script src="scripts/directives/navmen.js"></script>
+        <script src="scripts/directives/fitwidth.js"></script>
         <!-- endbuild -->
 </body>
 </html>

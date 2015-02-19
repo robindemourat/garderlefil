@@ -102,10 +102,11 @@ angular
         controller: 'VueDEnsembleCtrl',
         title:'Le projet : vue d\'ensemble'
       })
-      /*.when('/a_propos', {
+      .when('/a_propos', {
         templateUrl: 'views/a_propos.html',
-        controller: 'APrpsCtrl'
-      })*/
+        controller: 'APrpsCtrl',
+        title:'À propos'
+      })
       .otherwise({
         redirectTo: '/'
       });
