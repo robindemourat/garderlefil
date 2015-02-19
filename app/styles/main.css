@@ -64,6 +64,19 @@ footer{
   height : 100%;
 }
 
+.up,.down{
+  position : absolute;
+  right : 0;
+}
+
+.up{
+  top : 0;
+}
+
+.down{
+  bottom : 0;
+}
+
 /* menu*/
 .menu{
   position : absolute;
@@ -134,15 +147,6 @@ footer{
 .closed{
   height : 0;
   overflow:hidden;
-}
-
-.force-show{
-  color : red!important;
-}
-
-.force-show .closed{
-  height : auto!important;
-  overflow : show!important;
 }
 
 /* NAV */

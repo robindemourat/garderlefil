@@ -13,6 +13,7 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/transitions.css">
     <!-- endbuild -->
   </head>
   <body ng-app="garderlefilApp" ng-controller="LayoutCtrl">
@@ -28,7 +29,7 @@
 
     <div class="middle-container">
       <div class="content-container">
-        <div class="view-container" ng-class="{'col-sm-offset-2 col-sm-10 col-xs-offset-4 col-xs-8' : menuOut === true, 'col-sm-offset-1 col-sm-11 col-xs-offset-1 col-xs-11' : menuOut === false}" ng-view=""></div>
+        <div class="view-container" ng-class="setViewClass()" ng-view=""></div>
       </div>
 
       <nav class="menu" ng-class="{'col-sm-2 col-xs-4' : menuOut === true, 'col-sm-1 col-xs-1' : menuOut === false}" ng-click="menuOut = !menuOut" role="navigation" navmenu>
@@ -164,6 +165,8 @@
       <span>Robin de Mourat.</span><span>2011, tous droits réservés.</span>
     </footer>
     
+    <div class="down" ng-show="downUrl != undefined"><a ng-href="{{downUrl}}">Down</a></div>
+    <div class="up" ng-show="upUrl != undefined"><a ng-href="{{upUrl}}">Up</a></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
