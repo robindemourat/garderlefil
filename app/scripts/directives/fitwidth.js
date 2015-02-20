@@ -34,11 +34,14 @@ angular.module('garderlefilApp')
         	
         	if(el[0].tagName.toLowerCase() === 'img'){
         		el.bind("load" , function(e){ 
-        			w += $(el).width() + 10;
+        			w += $(el).width() + 15;
         			angular.element(element).css({width : w+'px'});
         		});
         	}else if($(el).hasClass('objet')){
-            w += $(el).width()*2 + 10;
+            var src = $(el).find('embed').attr('src');
+            if(src.indexOf('vimeo') > -1)
+              w += $(el).width()*2 + 10;
+            else w += $(el).width() + 10;
             angular.element(element).css({width : w+'px'});
           }else{
             w += $(el).width() + 10;

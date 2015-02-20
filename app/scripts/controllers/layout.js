@@ -76,13 +76,14 @@
     switch(event.keyCode){
 
         case 38:
+          console.log($scope.upUrl)
           if($scope.upUrl)
-            $location.path($scope.upUrl);
+            $location.path($scope.upUrl.substring(1));
         break;
 
         case 40:
           if($scope.downUrl)
-            $location.path($scope.downUrl);
+            $location.path($scope.downUrl.substring(1));
         break;
 
         default:break;
