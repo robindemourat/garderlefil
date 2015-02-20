@@ -87,7 +87,7 @@ footer{
 .up,.down{
   position : absolute;
   right : 2em;
-  color: red;
+  color : #BE1621;
   z-index:1001;
 }
 
